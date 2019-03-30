@@ -21,23 +21,26 @@ const list = [
 
 class App extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = { list: list };
+    }
+
     render(){
         return (
             <div className='App'>
-                {list.map(function(item, key){
-                    return (
-                        <div key={key}>
-                            <span>
-                                <a href={item.url} title={item.title}>
-                                    {item.title}
-                                </a>
-                            </span>
-                            <span>{item.author}</span>
-                            <span>{item.num_comments}</span>
-                            <span>{item.points}</span>
-                        </div>
-                    );
-                })}
+                {this.state.list.map((item, key) => 
+                    <div key={key}>
+                        <span>
+                            <a href={item.url} title={item.title}>
+                                {item.title}
+                            </a>
+                        </span>
+                        <span>{item.author}</span>
+                        <span>{item.num_comments}</span>
+                        <span>{item.points}</span>
+                    </div>
+                )}
             </div>
         );
     }
