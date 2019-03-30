@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 
 class App extends Component {
     render(){
-        return <h1>Olá Mundo!</h1>;
+        const helloWorld = "Seja bem vindo ao livro Road to React";
+
+        return (
+            <div>
+                <h1>{helloWorld}</h1>
+            </div>
+        );
     }
 }
 
